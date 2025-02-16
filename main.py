@@ -6,7 +6,7 @@ import threading
 sellu_cookies = [
     {
         "name": "sellu_session",
-        "value": "eyJpdiI6InRVYWtjMjNYbFBhOWlhK25qUHlYTGc9PSIsInZhbHVlIjoiZXZZeXpDczVVSTl3UVFjeU1HWjhUTkN1WDFoa2V5ZTRVcmVmLzRuaCtkSUlPK2FUYThIeDlJTXcvVzNhTjdRYmRmR2xJaG9adnpQbCtiMTRXUmREZ1M3ZXQ4ZVlUYzVPSU9iQXBzS2JZUC85RVgvSDB0OVdlTEpSekJIeGpzVGMiLCJtYWMiOiJlMmJjNTI2MzZhN2NmNTNiMTg5OTdmNWY1OWQ4YjIxNWFiYjM4Y2Q2Nzc0MGU3MzgzMmUwODMxYmQ5ZGFiNmRhIiwidGFnIjoiIn0%3D"
+        "value": "eyJpdiI6IlV5amxmbTdzK3VGQXp0dWdLSkJSdlE9PSIsInZhbHVlIjoiRHdBNXNkTy9ETXhydWpXbXV6SlJLaHZSUFdpT1NuTVliamRUTk04KzFBZjdPZk9HSzNjaUlaS1YzTXMrQWtlN1BGdWVjdEdSZERRQnZSUUY0bi9qTXRhVk9wN05KTEgzMCtUK0dHS3Q5U3MrRkZsM2pXaW9EM1kwODVXbzU1SFYiLCJtYWMiOiI2NzM0YmUwYzA2NjZjNjE5ZmRjN2IzOWZiMTk5YzE3ZDRjMzJkM2Y5MGFjN2ZhZWM5NGU1OGUwOGIwYzgwNzAwIiwidGFnIjoiIn0%3D"
     }
 ]
 
@@ -37,7 +37,7 @@ def str_to_seconds(str_time):
 if __name__ == '__main__':
     driver = utils.open("https://www.sellu.ge/auctions/f1970721-bed1-420e-bdbc-7677533cf8af", sellu_cookies)
 
-    sleep(7)
+    sleep(3)
 
     bid_button = utils.get_element(driver, By.ID, "bidBtn")
 
@@ -47,6 +47,9 @@ if __name__ == '__main__':
 
     while True:
         new_name_elements = utils.get_elements(driver, By.CLASS_NAME, "user-box")
+        if len(new_name_elements) < 3:
+            continue
+
         new_names = [ 'a', 'b', 'c' ]
         for i in range(3):
             new_names[i] = new_name_elements[i].text
