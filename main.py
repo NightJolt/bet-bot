@@ -6,7 +6,7 @@ import threading
 sellu_cookies = [
     {
         "name": "sellu_session",
-        "value": "eyJpdiI6IlV5amxmbTdzK3VGQXp0dWdLSkJSdlE9PSIsInZhbHVlIjoiRHdBNXNkTy9ETXhydWpXbXV6SlJLaHZSUFdpT1NuTVliamRUTk04KzFBZjdPZk9HSzNjaUlaS1YzTXMrQWtlN1BGdWVjdEdSZERRQnZSUUY0bi9qTXRhVk9wN05KTEgzMCtUK0dHS3Q5U3MrRkZsM2pXaW9EM1kwODVXbzU1SFYiLCJtYWMiOiI2NzM0YmUwYzA2NjZjNjE5ZmRjN2IzOWZiMTk5YzE3ZDRjMzJkM2Y5MGFjN2ZhZWM5NGU1OGUwOGIwYzgwNzAwIiwidGFnIjoiIn0%3D"
+        "value": ""
     }
 ]
 
