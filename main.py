@@ -35,7 +35,7 @@ def str_to_seconds(str_time):
     return float(str_time)
 
 if __name__ == '__main__':
-    driver = utils.open("https://www.sellu.ge/auctions/443079de-9c0f-4e3a-aa7f-09007dd0a70f", sellu_cookies)
+    driver = utils.open("https://www.sellu.ge/auctions/f1970721-bed1-420e-bdbc-7677533cf8af", sellu_cookies)
 
     sleep(7)
 

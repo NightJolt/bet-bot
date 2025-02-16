@@ -2,14 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from engine.config import SeleniumConfig
 
 
 #region DRIVER
 
 def open(website, cookies):
     options = webdriver.ChromeOptions()
-    SeleniumConfig.apply_options(options)
     driver = webdriver.Chrome(options=options)
     driver.get(website)
     for cookie in cookies:
@@ -44,13 +42,13 @@ def get_element(element, type, query):
 def get_elements(element, type, query):
     return element.find_elements(type, query)
 
-def get_element_visible(driver, type, query, timeout = SeleniumConfig.find_element_timeout):
+def get_element_visible(driver, type, query, timeout = 5.0):
     return WebDriverWait(driver, timeout).until(
         EC.visibility_of_element_located((type, query))
     )
 
 def get_element_visible_by_text(driver, text):
-    return WebDriverWait(driver, SeleniumConfig.find_element_timeout).until(
+    return WebDriverWait(driver, 5.0).until(
         EC.visibility_of_element_located((By.XPATH, f'//*[contains(text(), "{text}")]'))
     )
 
@@ -66,7 +64,7 @@ def get_child(element, indices):
     return element
 
 def wait_for_element_disappear(driver, type, query):
-    WebDriverWait(driver, SeleniumConfig.find_element_timeout).until(
+    WebDriverWait(driver, 5.0).until(
         EC.invisibility_of_element_located((type, query))
     )
 
